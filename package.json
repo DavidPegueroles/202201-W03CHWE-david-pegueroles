@@ -6,8 +6,8 @@
   "scripts": {
     "test": "jest --watchAll",
     "test-coverage": "jest --watchAll --collect-coverage",
-    "auto-melons&apples": "sass src/sass/styles.scss public/style/styles.css --watch",
-    "melons&apples": "sass src/sass/styles.scss public/style/styles.css",
+    "auto-compile": "sass src/sass/styles.scss public/style/styles.css --watch",
+    "compile": "sass src/sass/styles.scss public/style/styles.css",
     "prepare": "husky install"
   },
   "repository": {
