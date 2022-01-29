@@ -1,4 +1,4 @@
-import Component from "../Component/Component";
+import Component from "../Component/Component.js";
 
 class NavigationComopnent extends Component {
   constructor(parentElement, className) {
