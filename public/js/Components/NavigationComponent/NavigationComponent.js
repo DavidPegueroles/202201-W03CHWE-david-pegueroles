@@ -1,6 +1,6 @@
 import Component from "../Component/Component";
 
-class NavogationComopnent extends Component {
+class NavigationComopnent extends Component {
   constructor(parentElement, className) {
     super(parentElement, className, "ul");
 
@@ -16,4 +16,4 @@ class NavogationComopnent extends Component {
   }
 }
 
-export default NavogationComopnent;
+export default NavigationComopnent;
