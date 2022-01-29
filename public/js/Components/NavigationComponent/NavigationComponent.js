@@ -9,10 +9,10 @@ class NavigationComopnent extends Component {
 
   generateHTML() {
     this.element.innerHTML = `
-      <ul>
-        <li><a href="index.html">Pokédex</a></li>
-        <li><a href="my-pokemon.html">My Pokémon</a></li>
-        <li><a href="pokeInfo.html">PokéInfo</a></li>
+      <ul class="navigation-menu">
+        <li class="navigation-menu__list"><a href="index.html">Pokédex</a></li>
+        <li class="navigation-menu__list"><a href="my-pokemon.html">My Pokémon</a></li>
+        <li class="navigation-menu__list"><a href="pokeInfo.html">PokéInfo</a></li>
       </ul>
     `;
   }

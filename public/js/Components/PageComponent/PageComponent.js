@@ -11,7 +11,7 @@ class PageComponent extends Component {
   generateHTML() {
     this.element.innerHTML = `
     <header>
-      <h1><img src="images/pokemon-logo.svg" alt="Pokémon logo" /></h1>
+      <h1 class="title"><img src="images/pokemon-logo.svg" alt="Pokémon logo" /></h1>
     </header>
 
     <main>
@@ -28,7 +28,8 @@ class PageComponent extends Component {
   generateNavigation() {
     const navigationParent = this.element;
     new NavigationComopnent(
-      navigationParent.querySelector("header", "navigation")
+      navigationParent.querySelector("header"),
+      "navigation"
     );
   }
 }
