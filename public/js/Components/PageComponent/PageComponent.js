@@ -1,9 +1,34 @@
-import getPokemon from "../../pokeArray.js";
+import ButtonComponent from "../ButtonComponent/ButtonComponent.js";
 import CardComponent from "../CardComponent/CardComponent.js";
 import Component from "../Component/Component.js";
 import ListComponent from "../ListComponent/ListComponent.js";
 import NavigationComopnent from "../NavigationComponent/NavigationComponent.js";
 
+// Functions to fetch -----------
+
+async function getNinePokemon() {
+  const fetchedArray = await fetch(
+    `https://pokeapi.co/api/v2/pokemon?limit=20&offset=0`
+  );
+
+  const pokemonArrayJson = await fetchedArray.json();
+
+  const pokemonObjects = pokemonArrayJson.results;
+
+  const pokemon = pokemonObjects.map(async (pokemonObject) => {
+    const fetchedPokemonObject = await fetch(pokemonObject.url);
+    const pokemonObjectJson = fetchedPokemonObject.json();
+
+    return pokemonObjectJson;
+  });
+
+  const singlePokemon = Promise.all(pokemon);
+  return singlePokemon;
+}
+
+const getPokemon = await getNinePokemon();
+
+// Class Component --------------
 class PageComponent extends Component {
   constructor(parentElement, className) {
     super(parentElement, className, "div");
@@ -20,6 +45,9 @@ class PageComponent extends Component {
     <main>
     </main>
 
+    <aside>
+    </aside>
+
     <footer>
       <p>Made By David Pegueroles</p>
     </footer>
@@ -28,6 +56,7 @@ class PageComponent extends Component {
     this.generateNavigation();
     this.generatePokemonList();
     this.generateCard();
+    this.generateButtons();
   }
 
   generateNavigation() {
@@ -49,6 +78,26 @@ class PageComponent extends Component {
     getPokemon.forEach((pokemon) => {
       new CardComponent(parentElement, "pokemon-list__card", pokemon);
     });
+  }
+
+  generateButtons() {
+    const parentElement = this.element.querySelector("aside");
+
+    new ButtonComponent(parentElement, "button previous-button", "·•➤", () => {
+      this.previousTwenty();
+    });
+
+    new ButtonComponent(parentElement, "button next-button", "·•➤", () => {
+      this.nextTwenty();
+    });
+  }
+
+  nextTwenty() {
+    this.element.querySelector(".pokemon-list").innerHTML = "";
+  }
+
+  previousTwenty() {
+    this.element.querySelector(".pokemon-list").innerHTML = "";
   }
 }
 
