@@ -26,9 +26,7 @@ class CardComponent extends Component {
       }" class="pokemon">
       <div>
         <p class="pokemonStats">ID: #${this.pokemon.id}</p>
-        <p class="pokemonName ${
-          this.pokemon.types[0].type.name
-        }">${this.pokemon.name.toUpperCase()}</p>
+        <p class="pokemonName">${this.pokemon.name.toUpperCase()}</p>
         <p class="pokemonStats">Weight:${this.pokemon.weight}kg</p>
         <p class="pokemonStats">${this.pokemon.types[0].type.name}/${
         this.pokemon.types[1].type.name
@@ -43,9 +41,7 @@ class CardComponent extends Component {
       }" class="pokemon">
       <div>
         <p class="pokemonStats">ID: #${this.pokemon.id}.</p>
-        <p class="pokemonName ${
-          this.pokemon.types[0].type.name
-        }">${this.pokemon.name.toUpperCase()}</p>
+        <p class="pokemonName">${this.pokemon.name.toUpperCase()}</p>
         <p class="pokemonStats">Weight:${this.pokemon.weight}kg</p>
         <p class="pokemonStats">${this.pokemon.types[0].type.name}</p>
       </div>
