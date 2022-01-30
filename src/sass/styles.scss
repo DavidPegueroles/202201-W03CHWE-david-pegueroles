@@ -153,6 +153,12 @@ main {
         }
       }
     }
+
+    .pokemon-list__card:hover {
+      box-shadow: none;
+      cursor: pointer;
+    }
+
     .grass {
       background-color: variables.$grass2;
       border-color: variables.$grass1;
