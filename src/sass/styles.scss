@@ -42,29 +42,59 @@ header {
   top: 0;
 
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 
   box-shadow: 0px 12px 20px -4px rgba(0, 0, 0, 0.3);
 
   .title {
-    margin: 0;
-    margin-top: 10px;
+    margin: 10px;
+    margin-top: 20px;
     padding: 0;
 
     img {
-      height: 90px;
+      height: 60px;
     }
   }
 
   .navigation {
-    margin-top: 20px;
-    width: 400px;
-
     .navigation-menu {
       display: flex;
+      flex-direction: column;
       justify-content: space-around;
-      align-items: center;
+
+      li {
+        font-size: 15px;
+        margin: 2.5px;
+      }
+    }
+  }
+
+  @media (min-width: variables.$breakpoint) {
+    .title {
+      margin: 0;
+      margin-top: 10px;
+      padding: 0;
+
+      img {
+        height: 90px;
+      }
+    }
+
+    .navigation {
+      margin-top: 20px;
+      width: 400px;
+
+      .navigation-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        li {
+          font-size: 20px;
+        }
+      }
     }
   }
 }
@@ -79,7 +109,7 @@ main {
   .pokemon-list {
     margin-top: 130px;
     margin-bottom: 70px;
-    max-width: 950px;
+    max-width: 1000px;
 
     display: flex;
     flex-wrap: wrap;
