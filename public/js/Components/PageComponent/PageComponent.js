@@ -1,6 +1,7 @@
 import getPokemon from "../../pokeArray.js";
 import CardComponent from "../CardComponent/CardComponent.js";
 import Component from "../Component/Component.js";
+import ListComponent from "../ListComponent/ListComponent.js";
 import NavigationComopnent from "../NavigationComponent/NavigationComponent.js";
 
 class PageComponent extends Component {
@@ -25,6 +26,7 @@ class PageComponent extends Component {
     `;
 
     this.generateNavigation();
+    this.generatePokemonList();
     this.generateCard();
   }
 
@@ -36,16 +38,16 @@ class PageComponent extends Component {
     );
   }
 
+  generatePokemonList() {
+    const parentElement = this.element;
+    new ListComponent(parentElement.querySelector("main"), "section");
+  }
+
   generateCard() {
-    const parentElement = this.element.querySelector("main");
+    const parentElement = this.element.querySelector(".pokemon-list");
 
     getPokemon.forEach((pokemon) => {
-      new CardComponent(
-        parentElement,
-        "pokecard",
-        pokemon.name,
-        pokemon.sprites.other.dream_world.front_default
-      );
+      new CardComponent(parentElement, "pokemon-list__card", pokemon);
     });
   }
 }
