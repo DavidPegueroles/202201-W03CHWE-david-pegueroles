@@ -2,7 +2,7 @@ const firstPokemonIndex = 0;
 
 async function getNinePokemon() {
   const fetchedArray = await fetch(
-    `https://pokeapi.co/api/v2/pokemon?limit=9&offset=${firstPokemonIndex}`
+    `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${firstPokemonIndex}`
   );
 
   const pokemonArrayJson = await fetchedArray.json();
