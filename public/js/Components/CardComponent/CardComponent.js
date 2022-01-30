@@ -1,9 +1,6 @@
 import Component from "../Component/Component.js";
 
 class CardComponent extends Component {
-  // name;
-  // number;
-  // url;
   pokemon;
 
   constructor(parentElement, className, pokemon) {
@@ -12,8 +9,6 @@ class CardComponent extends Component {
     this.pokemon = pokemon;
 
     this.element.className = `${className} ${this.pokemon.types[0].type.name}`;
-    // this.name = name;
-    // this.url = url;
 
     this.generateHTML();
   }
