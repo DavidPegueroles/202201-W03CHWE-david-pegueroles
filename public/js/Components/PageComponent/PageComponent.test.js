@@ -1,4 +1,4 @@
-import PageComponent from "./PageComponent";
+import PageComponent from "./PageComponent.js";
 
 describe("Given a PageComponent component", () => {
   describe("When it's rendered", () => {
