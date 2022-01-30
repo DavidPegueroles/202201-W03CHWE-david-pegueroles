@@ -1,4 +1,4 @@
-import Component from "../Component/Component";
+import Component from "../Component/Component.js";
 
 class ButtonComponent extends Component {
   constructor(parentElement, className, icon, actionOnClick) {
