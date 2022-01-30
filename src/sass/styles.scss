@@ -1,6 +1,7 @@
 // ------- Imports ------------------------
 @use "variables";
 @import url("https://fonts.cdnfonts.com/css/pokemon-solid");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 // ------- HTML Formatting ----------------
 
@@ -35,6 +36,7 @@ li {
 // ------- Header --------------------------
 
 header {
+  background-color: white;
   width: 100vw;
   position: fixed;
   top: 0;
@@ -70,33 +72,75 @@ header {
 // ------- Main ----------------------------
 
 main {
-  margin-top: 130px;
-
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  text-align: center;
 
-  .pokecard {
-    width: 200px;
-    height: 150px;
+  .pokemon-list {
+    margin-top: 130px;
+    margin-bottom: 70px;
+    max-width: 950px;
 
-    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
-    border: 5px solid beige;
-    border-radius: 30px;
-    box-shadow: 0px 5px 20px -4px #000;
+    .pokemon-list__card {
+      width: 280px;
+      height: 150px;
 
-    img {
-      width: 150px;
-      height: 100px;
+      margin: 20px;
 
-      margin-top: 10px;
+      background-color: #dcdcf5;
+      border: 5px solid beige;
+      border-radius: 30px;
+      box-shadow: 0px 5px 20px -4px #000;
+
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      img {
+        width: 90px;
+        max-height: 120px;
+      }
+
+      div {
+        p {
+          margin: 0;
+          margin-bottom: 5px;
+
+          font-size: 12px;
+          font-family: "Press Start 2P", cursive;
+        }
+
+        .pokemonName {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          font-size: 15px;
+        }
+      }
+    }
+    .grass {
+      background-color: variables.$grass2;
+      border-color: variables.$grass1;
     }
 
-    p {
-      margin: 0;
+    .fire {
+      background-color: variables.$fire2;
+      border-color: variables.$fire1;
+    }
+
+    .water {
+      background-color: variables.$water2;
+      border-color: variables.$water1;
+    }
+
+    .bug {
+      background-color: variables.$bug2;
+      border-color: variables.$bug1;
     }
   }
 }
