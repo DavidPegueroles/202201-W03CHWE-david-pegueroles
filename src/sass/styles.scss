@@ -120,9 +120,12 @@ main {
     text-align: center;
 
     .pokemon-list__card {
-      width: 280px;
+      width: 90vw;
       height: 150px;
-
+      @media (min-width: variables.$breakpoint) {
+        width: 280px;
+        height: 150px;
+      }
       margin: 20px;
 
       background-color: #dcdcf5;
@@ -140,6 +143,11 @@ main {
       }
 
       div {
+        margin-bottom: 25px;
+        @media (min-width: variables.$breakpoint) {
+          margin-bottom: 15px;
+        }
+
         position: relative;
         p {
           margin: 0;
