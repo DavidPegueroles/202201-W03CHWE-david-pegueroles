@@ -1,3 +1,4 @@
+import ButtonComponent from "../ButtonComponent/ButtonComponent.js";
 import Component from "../Component/Component.js";
 
 class CardComponent extends Component {
@@ -42,6 +43,17 @@ class CardComponent extends Component {
       </div>
       `;
     }
+
+    this.generateButtons();
+  }
+
+  generateButtons() {
+    const parentElement = this.element.querySelector("div");
+
+    new ButtonComponent(parentElement, "button delete-button", "DELETE", () => {
+      this.element.remove();
+    });
+    new ButtonComponent(parentElement, "button favourite-button", "FAVOURITE");
   }
 }
 

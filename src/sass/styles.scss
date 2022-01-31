@@ -41,6 +41,8 @@ header {
   position: fixed;
   top: 0;
 
+  z-index: 10;
+
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -138,6 +140,7 @@ main {
       }
 
       div {
+        position: relative;
         p {
           margin: 0;
           margin-bottom: 5px;
@@ -150,6 +153,32 @@ main {
           margin-top: 10px;
           margin-bottom: 10px;
           font-size: 15px;
+        }
+
+        .button {
+          position: absolute;
+          bottom: -25px;
+          left: -20px;
+          padding: 3px;
+          padding-left: 4px;
+          padding-right: 4px;
+          margin: 2px;
+
+          background-color: #be8dec;
+
+          font-size: 9px;
+          font-family: "Press Start 2P", cursive;
+          text-align: center;
+
+          border: 1px solid black;
+          border-radius: 6px;
+
+          cursor: pointer;
+        }
+
+        .favourite-button {
+          left: 50px;
+          background-color: #f5ef99;
         }
       }
     }
