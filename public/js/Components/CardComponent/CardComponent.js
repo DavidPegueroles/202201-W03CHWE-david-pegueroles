@@ -48,10 +48,12 @@ class CardComponent extends Component {
   }
 
   generateButtons() {
-    const parentElement = this.element;
+    const parentElement = this.element.querySelector("div");
 
-    new ButtonComponent(parentElement, "delete-button", "DELETE");
-    new ButtonComponent(parentElement, "favourite-button", "FAVOURITE");
+    new ButtonComponent(parentElement, "button delete-button", "DELETE", () => {
+      this.element.remove();
+    });
+    new ButtonComponent(parentElement, "button favourite-button", "FAVOURITE");
   }
 }
 
